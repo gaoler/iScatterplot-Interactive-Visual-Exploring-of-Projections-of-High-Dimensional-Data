@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prjection</title>
+    {% load staticfiles %}
+    <script> token = '{{ csrf_token }}';</script>
+    <!--导入CSS文件-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flat-ui.min.css' %}">
+
+    <!--导入固有JS文件-->
+    <script src="{% static 'lib/d3.min.js' %}"></script>
+    <script src="{% static 'lib/jquery-2.2.1.min.js' %}"></script>
+    <script src="{% static 'lib/jQueryRotate.2.2.js' %}"></script>
+    <script src="{% static 'lib/bootstrap.min.js' %}"></script>
+    <script src="{% static 'lib/flat-ui.min.js' %}"></script>
+    <script src="{% static 'lib/underscore-min.js' %}"></script>
+    <script src="{% static 'lib/d3.tip.v0.6.3.js' %}"></script>
+    <script src="{% static 'lib/heatmap.js' %}"></script>
+
+    <!--导入自定义JS文件-->
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script src="{% static 'js/view.js' %}"></script>
+    <script src="{% static 'js/Node_Ajax.js' %}"></script>
+
+</head>
+<body id="BodyStyle">
+<div id="Container">
+    <div id="Left">
+        <div id="Data">
+            <div id="DataTitle">
+                <label style="padding-top: 5px">Configuration Panel</label>
+            </div>
+            <div id="DataSelect">
+                <p style="position:relative;left:0px;top:0px;width:80px;">
+                    Datasets
+                </p>
+                <select class="form-control " id="selectData" onchange="Init()"
+                        style="position: relative;padding-top: 2px;padding-left: 2px;padding-bottom: 1px ;
+                                width:100px;height:25px; left:95px;top:-40px; ">
+                     <option value=""></option>
+{#                    <option value="./static/data/my-2.csv">MY_2</option>#}
+                    <option value="./static/data/Quality of Life Index-clean.csv">Quality of Life Index-clean</option>
+                    <option value="./static/data/Syn data.csv">norm-Syndata</option>
+{#                    <option value="./static/data/auto-mpg-clean.csv">auto-mpg-clean</option>#}
+{#                    <option value="./static/data/seeds.csv">seeds</option>#}
+{#                    <option value="./static/data/glass.csv">glass</option>#}
+{#                    <option value="./static/data/Wholesale customers data.csv">Wholesale customers data</option>#}
+{#                    <option value="./static/data/Hayes-Roth.csv">Hayes-Roth</option>#}
+{#                    <option value="./static/data/flea.csv">flea</option>#}
+{#                    <option value="./static/data/wine.csv">wine</option>#}
+{#                    <option value="./static/data/segmentation.csv">segmentation</option>#}
+                    <option value="./static/data/auto-mpg.csv">auto-mpg</option>
+                    <option value="./static/data/iris.csv">iris</option>
+                </select>
+                <div style="height: 40px">
+                    <p style="position:relative;left:0px;top:-24px;width:80px">Data Size</p>
+                    <input class="form-control "
+                           style="font-size: 16px;
+                           position: relative; top:-65px;left:95px; width: 80px;height: 25px;"
+                           id="DataSize"
+                           size="2"
+                           type="text"/>
+                </div>
+                <div style="height: 40px">
+                    <p style="position:relative;left:0px;top:-20px;width:80px">Dimension</p>
+                    <input class="form-control "
+                           style="font-size: 16px;
+                           position: relative; top:-61px;left: 95px; width: 80px;height: 25px"
+                           id="Dimension"
+                           size="2"
+                           type="text"/>
+                </div>
+            </div>
+        </div>
+        <div id="Quality">
+            <div id="QualityTitle">
+                <label style="padding-top: 5px">Quality Metrics</label>
+            </div>
+            <div id="QualitySelect">
+                <div id="QualityOutlying"><input name="Quality" type="radio" value="OUTLYING"  checked="true" onclick="qualityCheck()"/><font
+                        style="padding-left: 10px">Outlying</font></div>
+                <div id="QualityClustering"><input name="Quality" type="radio" value="CLUSTER"
+                                                   onclick="qualityCheck()"/><font
+                        style="padding-left: 10px">Clustering</font></div>
+                <div id="QualityCorrelation"><input id="MIC" name="Quality" type="radio" value="MIC"
+                                                    onclick="qualityCheck()"/><font
+                        style="padding-left: 10px">Trends</font></div>
+            </div>
+        </div>
+        <div id="Method">
+            <div id="MethodTitle">
+                <label style="padding-top: 5px">Operations</label>
+            </div>
+            <div id="MethodSelect">
+                <div id="Point"><input name="Line"  type="radio"  value="-1"
+                                       onclick="IsLine(-1)"/><font style="padding-left: 10px">Point</font></div>
+                <div id="Line"><input name="Line" type="radio" value="1" onclick="IsLine()" checked="true"/><font
+                        style="padding-left: 10px">Line</font></div>
+                <div id="Lasso"><input name="Line" id="LINE" type="radio" checked="true" value="0"
+                                       onclick="IsLine()"/><font style="padding-left: 10px">Lasso</font></div>
+            </div>
+        </div>
+        <div id="Color">
+            <div id="ColorFlag">
+                 <label style="padding-top: 5px">Labeling</label>
+            </div>
+           <div id="SetColor"><button class="btn" style="position: relative;width: 127px;height: 30px;padding: 0px;text-align: left;" onclick="seletedColor()"><label style="font-weight: bold;" onclick="seletedColor()">&nbsp;&nbsp;Label</label></button></div>
+            <div id="ClearColor"><button class="btn" style="position: relative;width: 127px;height: 30px;padding: 0px;text-align: left;" onclick="clearColot()"><label style="font-weight: bold;" onclick="clearColot()">&nbsp;&nbsp;Clear label</label></button></div>
+        </div>
+        <div id="Save">
+            <div id="SaveTitle">
+                <label style="padding-top: 5px">Save Projection</label>
+            </div>
+             <div id="SaveProjection"><button class="btn" style="position: relative;width: 127px;height: 30px;padding: 0px;text-align: left;" onclick=""><label style="font-weight: bold;" onclick="saveProjection()">&nbsp;&nbsp;Save projection</label></button></div>
+        </div>
+
+
+    </div>
+    <div id="Right">
+        <div id="MainTitle"><label style="padding-top: 5px">Main View</label></div>
+        <div id="MainView">
+
+        </div>
+    </div>
+    <div id="selectedProjections">
+        <div id="selectedTitle"><label style="padding-top: 5px">Projection List</label></div>
+        <div id="selectedBody" style="overflow:scroll;">
+        </div>
+    </div>
+</div>
+</body>
+</html>

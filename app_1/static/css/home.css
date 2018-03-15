@@ -1,0 +1,210 @@
+#BodyStyle{
+    font-family: Arial,Verdana,Sans-serif;
+    font-size:18px;
+}
+#Container{
+    margin-top: 10px;
+    margin-left: 200px;
+    margin-right:200px;
+    width: auto;
+    height:auto;
+}
+#Left{
+    margin-top: 10px;
+    float:left;
+    width:252px;
+    height:920px;
+    border:1px solid #6d6d6d;
+}
+#Data{
+    width:250px;
+    height:200px;
+}
+#DataTitle{
+    width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+}
+#DataSelect{
+    padding-left: 20px;
+    padding-top: 20px;
+    width:250px;
+    height:150px;
+}
+#Quality{
+    width: 250px;
+    height:190px;
+}
+#QualityTitle{
+    width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+
+}
+#QualitySelect{
+    width: 200px;
+    height:150px;
+}
+#QualityCorrelation{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height:20px;
+}
+#QualityOutlying{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height:20px;
+}
+#QualityClustering{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height:20px;
+}
+#Method{
+    width:250px;
+    height:190px;
+}
+#MethodTitle{
+    width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+}
+
+#MethodSelect{
+    width:250px;
+    height:150px;
+}
+
+#Point{
+    margin-left:20px;
+    margin-top:20px;
+    width:150px;
+    height:20px;
+}
+
+#Lasso{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height:20px;
+}
+
+#Line{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height:20px;
+}
+
+#Color{
+    width:250px;
+    height:170px;
+}
+
+#ColorFlag{
+    width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+}
+
+#SetColor{
+    padding-left: 20px;
+    padding-top: 20px;
+    width:250px;
+    height:50px;
+}
+#ClearColor{
+    padding-left: 20px;
+    padding-top: 20px;
+    width:250px;
+    height:50px;
+}
+#Save{
+    width:250px;
+    height:150px;
+}
+#SaveTitle{
+   width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+}
+#SaveProjection {
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 250px;
+    height: 50px;
+}
+
+#Right{
+    margin-top: 10px;
+    margin-left: 10px;
+    float:left;
+    width:892px;
+    height:920px;
+    border:1px solid #6d6d6d;
+}
+#MainTitle{
+    width: 890px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+
+}
+#MainView{
+    width:890px;
+    height:880px;
+}
+#subview{
+    width:740px;
+    height:740px;
+}
+
+#selectedProjections{
+    margin-top: 10px;
+    margin-left: 10px;
+    float:left;
+    width:252px;
+    height:920px;
+    border:1px solid #6d6d6d;
+}
+#selectedTitle{
+     width: 250px;
+    height: 40px;
+    font-family: Arial,Verdana,Sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color:#6d6d6d;
+}
+#selectedBody{
+    width:250px;
+    height: 870px;
+}
+
+

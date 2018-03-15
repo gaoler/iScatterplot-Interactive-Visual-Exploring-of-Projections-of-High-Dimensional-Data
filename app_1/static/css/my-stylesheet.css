@@ -1,0 +1,72 @@
+svg{
+
+}
+
+#background{
+	background-color:white;
+	width:1920px;
+	height:1080px;
+}
+
+.axis text {
+
+}
+
+.MyLine{
+	fill: none;
+	stroke:black;
+	stroke-width: 0.5px;
+}
+
+path {
+	fill: none;
+
+}
+
+.background path{
+	fill: none;
+	shape-rendering: crispEdges;
+}
+
+.foreground path{
+	fill: none;
+}
+
+.MyDottedLine{
+	fill: none;
+	stroke:black;
+	stroke-width: 1px;
+}
+
+.MyRect{
+	stroke: black;
+	cursor:pointer;
+	fill: white;
+}
+
+.MyCircle{
+
+}
+
+
+
+.MyText{
+	fill:black;
+	cursor:pointer;
+	font-size: 14px;
+}
+
+.MyDLine{
+	fill: none;
+	stroke:#7D7DFF;
+	stroke-width: 1px;
+}
+
+.link {
+	stroke: #ccc;
+	stroke-width: 1;
+}
+
+.buttonrect{
+
+}
